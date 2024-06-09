@@ -1,6 +1,6 @@
 import os
 
-from flask import Flask
+from flask import Flask, session
 
 
 def create_app(test_config=None):
@@ -19,7 +19,13 @@ def create_app(test_config=None):
         os.makedirs(app.instance_path)
     except OSError:
         pass
-    
+  
+    @app.before_request
+    def before_request():
+        if 'solution_word' not in session:
+            session['solution_word'] = 'idols'
+            session['guessed_words'] = []
+
     from . import game_page
     app.register_blueprint(game_page.bp)
 

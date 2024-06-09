@@ -13,11 +13,7 @@
         <p>{{ guess }}</p>
     {% endif %}
 
-    <form action="{{ url_for('game.guess') }}" method="post">
-        <label for="guess">Guess</label>
-        <input name="guess" id="guess" maxlength="5" minlength="5" required>
-        <input type="submit" value="Guess">
-    </form>
+    <h1>YAY! You win!</h1>
 
     <form action="{{ url_for('game.reset') }}" method="post">
         <input type="submit" value="Reset">
