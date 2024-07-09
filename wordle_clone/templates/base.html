@@ -5,7 +5,11 @@
 </nav>
 <section class="content">
     {% for i in range(6) %}
-        <p>{{game_board[0][i]}} | {{game_board[1][i]}}</p>
+        <div class="row">
+            {% for j in range(5) %}
+                <div class="{{game_board[1][i][j]}}">{{game_board[0][i][j]}}</div>
+            {% endfor %}
+        </div>
     {% endfor %}
     <p></p>
     <p>Your guess was:</p>

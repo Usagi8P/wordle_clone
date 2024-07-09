@@ -26,7 +26,7 @@ html {
   }
   
   nav {
-    background: lightgray;
+    background: lightgrey;
     display: flex;
     align-items: center;
     padding: 0 0.5rem;
@@ -69,6 +69,52 @@ html {
     margin: 1rem 0 0.25rem 0;
   }
   
+  .correct {
+    background-color: green;
+    display: inline;
+    width: 50px;
+    height: 50px;
+    padding: 10px;
+    border: 2px solid black;
+  }
+
+  .location {
+    background-color: rgb(186, 202, 39);
+    display: inline;
+    width: 50px;
+    height: 50px;
+    padding: 10px;
+    border: 2px solid black;
+  }
+  
+  .wrong {
+    background-color: red;
+    display: inline;
+    width: 50px;
+    height: 50px;
+    padding: 10px;
+    border: 2px solid black;
+  }
+
+  .no_hint {
+    background-color: grey;
+    display: inline;
+    width: 50px;
+    height: 50px;
+    padding: 10px;
+    border: 2px solid black;
+  }
+
+  .row {
+    width: auto;
+    height: 2em;
+    padding: 10px;
+  }
+  
+  .inline {
+    display: inline;
+  }
+
   .flash {
     margin: 1em 0;
     padding: 1em;

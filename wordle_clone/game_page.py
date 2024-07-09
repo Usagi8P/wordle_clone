@@ -42,7 +42,7 @@ def wordle_game():
 
 def calculate_game_board(guess_list:list[str]) -> list[list[str]]:
     guesses:list[str] = ["_"*5]*6
-    hints:list[str] = ["_"*5]*6
+    hints:list[list[str]] = [["no_hint"]*5]*6
 
     for i, guess in enumerate(guess_list):
         guesses[i] = guess
@@ -52,15 +52,14 @@ def calculate_game_board(guess_list:list[str]) -> list[list[str]]:
 
     return game_board
 
-def get_hint(guess:str) -> str:
+def get_hint(guess:str) -> list[str]:
     hint_list:list[str] = []
     for i, letter in enumerate(guess):
         if letter == session['solution_word'][i]:
-            hint_list.append('O')
+            hint_list.append('correct')
             continue
         if letter in session['solution_word']:
-            hint_list.append('Y')
+            hint_list.append('location')
             continue
-        hint_list.append('X')
-    hint:str = ''.join(hint_list)
-    return hint
+        hint_list.append('wrong')
+    return hint_list
